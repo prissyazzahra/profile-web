@@ -1,0 +1,30 @@
+.loader {
+  background: #FFF1D0;
+  height: 100vh;
+}
+
+.circles {
+  position: absolute;
+  top: calc(50% - 2em);
+  left: calc(50% - 8em);
+  display: flex;
+}
+
+.circle {
+  margin: 1em;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #DD1C1A;
+  animation: bounce 0.5s infinite alternate;
+} 
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-50px);
+    background: #086788;
+  }
+}
