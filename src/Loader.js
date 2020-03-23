@@ -15,7 +15,7 @@ class Loader extends React.Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ done: true });
-    }, 4);
+    }, 4000);
   }
   render() {
 

@@ -59,7 +59,6 @@ const ProfileWrapper = styled.div`
   .tech {
     text-align: right;
     padding: 2em;
-    margin-top: 6em;
 
   }
 
@@ -67,7 +66,7 @@ const ProfileWrapper = styled.div`
     opacity: 0.3;
     color: ${props => props.theme.duskyBlue};
     font-weight: bold;
-    font-size: 10rem;
+    font-size: 8rem;
     transition: 0.5s;
 
   }
@@ -187,10 +186,6 @@ const ProfileWrapper = styled.div`
       margin-top: 3em;
       width: 50vw;
     }
-  }
-
-  .tech {
-    margin-top: 3em;
   }
 
   .rectangle {
