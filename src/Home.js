@@ -34,8 +34,32 @@ class Home extends React.Component {
       opacity: 1 - (this.state.position / 500),
     }
 
+    const contacts = [
+      {
+        imageSrc: 'github.svg',
+        alt: 'Github',
+        url: 'https://github.com/prissyazzahra',
+      },
+      {
+        imageSrc: 'gitlab.svg',
+        alt: 'Gitlab',
+        url: 'https://gitlab.com/prissyazzahra',
+      },
+      {
+        imageSrc: 'linkedin.svg',
+        alt: 'LinkedIn',
+        url: 'https://www.linkedin.com/in/prissyazzahra/',
+      },
+      {
+        imageSrc: 'resume.svg',
+        alt: 'Resume',
+        url: 'https://drive.google.com/open?id=1GBwSO7kmitblvp0gnbvCC-SfGwekoSMo'
+      }
+    ]
+
     const projects = [
-      {imageSrc: 'pmb.png',
+      {
+        imageSrc: 'pmb.png',
         title: 'PMB Fasilkom UI',
         description: 'A website for the orientation period of Fasilkom UI.',
         tools: [
@@ -65,7 +89,7 @@ class Home extends React.Component {
         tools: [
           'HTML',
           'CSS',
-          'JavaScript',
+          'JS',
           'Django'
         ],
         url: 'http://prissyazzahra.herokuapp.com/',
@@ -73,7 +97,7 @@ class Home extends React.Component {
       }
     ]
 
-    return(
+    return (
       <ProfileWrapper>
         <div className="mid">
           <div style={headerAnimation}>
@@ -87,14 +111,15 @@ class Home extends React.Component {
           </div>
           <img id="profile" style={headerAnimation} src={"profile-pic.jpg"} alt="Hello, I'm Prissy!" />
         </div>
-        <div className="before-rect" />
-        <div className="rectangle">
-          <h2>I'm an undergraduate student at Faculty of Computer Science, University of Indonesia.</h2>
-          <h2>Web development is mainly what I'm passionate about,</h2>
-          <h2>but I'm also interested in animation and design.</h2>
-          <h2>I usually combine them together and animate using code.</h2>
+        <div className="wrapper">
+          <div className="rectangle" />
+          <div className="text">
+            <h2>I'm an undergraduate student at Faculty of Computer Science, University of Indonesia.</h2>
+            <h2>Web development is mainly what I'm passionate about,</h2>
+            <h2>but I'm also interested in animation, illustration, and UI design.</h2>
+            <h2>I occasionally animate using code.</h2>
+          </div>
         </div>
-        <div className="after-rect" />
         <div className="tech">
           <h1 className="watermark">PROJECTS</h1>
           <div className="projects">
@@ -131,8 +156,15 @@ class Home extends React.Component {
           </div>
         </div>
         <div className="contact">
-          <h1 className="watermark">CONTACT</h1>
-          <h3>Feel free to contact me or look at my other profiles!</h3>
+        <h1 className="watermark">CONTACT</h1>
+          <div className="icons">
+            {contacts.map((item, i) =>
+              <a key={i} href={item.url} target="_blank" rel="noopener noreferrer">
+                <img src={item.imageSrc} alt={item.alt} />
+              </a>
+            )}
+          </div>
+            <p>Prissy Azzahra Ratnadwita © 2020</p>
         </div>
       </ProfileWrapper>
     )

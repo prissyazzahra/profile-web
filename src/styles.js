@@ -17,7 +17,7 @@ const ProfileWrapper = styled.div`
 
   h2 {
     line-height: 4rem;
-    font-size: 1.5rem;
+    font-size: 1.5vw;
   }
 
   .mid {
@@ -35,29 +35,23 @@ const ProfileWrapper = styled.div`
     }
   }
 
-  .rectangle {
+  .text {
     color: ${props => props.theme.yellow}
     text-align: center;
-    background: ${props => props.theme.red};
     width: 100%;
     position: absolute;
     z-index: 1;
+    top: 25%;
   }
 
-  .before-rect {
-    background: ${props => props.theme.red};
+  .wrapper {
     position: relative;
-    height: 200px;
-    width: 4000px;
-    transform: rotate(-5deg) translate(-100px);
-    z-index: 0;
   }
 
-  .after-rect {
+  .rectangle {
     background: ${props => props.theme.red};
-    position: relative;
-    height: 300px;
-    width: 4000px;
+    height: 30vw;
+    width: calc(100% + 200px);
     transform: rotate(-5deg) translate(-100px);
     z-index: 0;
   }
@@ -90,13 +84,14 @@ const ProfileWrapper = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-wrap: wrap;
       margin-top: 1em; 
 
       span {
         border: 2px solid ${props => props.theme.yellow};
         padding: 5px 15px;
         border-radius: 50px;
-        margin: 0 0.5em;
+        margin: 0 0.3em;
       }
     }
   }
@@ -104,7 +99,7 @@ const ProfileWrapper = styled.div`
   .card {
     background: ${props => props.theme.coffee};
     padding: 1.5em;
-    flex-basis: 25%;
+    flex-basis: 30%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -123,10 +118,11 @@ const ProfileWrapper = styled.div`
     .sources {
       display: flex;
       margin-top: 1em;
+      justify-content: center;
       transition: 0.5s;
 
       .button {
-        width: 50%;
+        width: 100%;
         margin: 0 0.5em;
         text-decoration: none;
         font-weight: bold;
@@ -147,6 +143,25 @@ const ProfileWrapper = styled.div`
 
   .contact {
     padding: 2em;
+
+    .icons {
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      width: 50%;
+      flex-wrap: wrap;
+    }
+
+    img {
+      color: ${props => props.theme.duskyBlue};
+      width: 50px;
+    }
+
+    p {
+      margin-top: 2em;
+      width: 100%;
+      text-align: center;
+    }
   }
 
 @media screen and (max-width: 64em) {
@@ -155,8 +170,13 @@ const ProfileWrapper = styled.div`
   }
 
   h2 {
-    font-size: 4vw;
-    line-height: 2.2em;
+    line-height: 3em;
+    font-size: 2vw;
+  }
+
+  .watermark {
+    font-size: 15vw;
+    opacity: 1;
   }
 
   .mid {
@@ -169,8 +189,30 @@ const ProfileWrapper = styled.div`
     }
   }
 
+  .tech {
+    margin-top: 3em;
+  }
+
+  .rectangle {
+    height: 40vw;
+  }
+
   .projects {
     flex-direction: column;
+
+    .tools {
+      span {
+        margin: 0.5em;
+      }
+
+      .button {
+        width: 30%;
+      }
+    }
+  }
+
+  .icons {
+    width: 100%;
   }
 }
 `;
