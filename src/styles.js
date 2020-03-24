@@ -49,7 +49,7 @@ const ProfileWrapper = styled.div`
   }
 
   .rectangle {
-    background: ${props => props.theme.red};
+    background: ${props => props.theme.duskyBlue};
     height: 30vw;
     width: calc(100% + 200px);
     transform: rotate(-5deg) translate(-100px);
@@ -205,9 +205,17 @@ const ProfileWrapper = styled.div`
       }
     }
   }
+  
+  }
 
-  .icons {
-    width: 100%;
+  @media screen and (max-width: 32em) {
+    .contact {
+    img {
+      width: 30px;
+    }
+    .icons {
+      width: 100%;
+    }
   }
 }
 `;
